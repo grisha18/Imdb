@@ -9,6 +9,7 @@ import {
 import Contacts from "./Contacts";
 import User from "./User";
 import Home from "./Home";
+import Posts from "./Posts";
 
 function App() {
   return (
@@ -19,11 +20,14 @@ function App() {
             <Link to="/">Home</Link>
           </li>
           <li>
-          <Link to="/contacts">Contacts</Link>
-            </li>
-            <li>
+            <Link to="/contacts">Contacts</Link>
+          </li>
+          <li>
             <Link to="/users">Users</Link>
-            </li>
+          </li>
+          <li>
+            <Link to="/posts">Posts</Link>
+          </li>
         </ul>
       </nav>
 
@@ -38,6 +42,9 @@ function App() {
           </Route>
           <Route path="/">
             <Home />
+          <Route path="/posts">
+              <Posts />
+            </Route>  
           </Route>
         </Switch>
 
