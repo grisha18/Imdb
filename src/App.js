@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, {useState} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,7 +11,13 @@ import User from "./User";
 import Home from "./Home";
 import Posts from "./Posts";
 
+//https://www.youtube.com/watch?v=zWLKPRt-a68
+
 function App() {
+
+
+  const [number, setNumber] = useState(1);
+
   return (
     <Router>
       <nav>
@@ -41,10 +47,10 @@ function App() {
             <User />
           </Route>
           <Route path="/">
-            <Home />
+            <Home number={number} setNumber={setNumber}/>
           <Route path="/posts">
-              <Posts />
-            </Route>  
+             <Posts id={parseInt(number)}/>
+          </Route>  
           </Route>
         </Switch>
 

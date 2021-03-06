@@ -18,10 +18,15 @@ const Elem = ({e})=>{
 const User = (userid) => {
 
     const [data, setData] = useState(null);
-    useEffect(async ()=>{
-        const response = await fetch("https://jsonplaceholder.typicode.com/todos")
-        let todos = await response.json();
-        setData(todos);
+    useEffect( ()=>{
+        // IIFE instantly invoked function expression
+        (async ()=>{
+            const response = await fetch("https://jsonplaceholder.typicode.com/todos")
+            let todos = await response.json();
+            setData(todos);
+        })()
+        
+        
 
     }, [])
 
