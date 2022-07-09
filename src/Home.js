@@ -1,4 +1,11 @@
 import React,{useState} from 'react';
+import Menu from './Components/Menu';
+import Search from './Components/Search';
+import Premium from './Components/Premium';
+import WatchList from './Components/WatchList';
+import SignIn from './Components/SignIn';
+import LanguageSwitcher from './Components/LanguageSwitcher';
+import './Home.css';
 
 const Home = ({number, setNumber}) => {
  
@@ -6,18 +13,17 @@ const Home = ({number, setNumber}) => {
 
     return(
         <>
-            <div>{number}</div>
-            <div>Home</div>
-            <select id="selects" onChange = {() =>{
-                var select = document.getElementById('selects');
-
-                setNumber(select.value)
-            }    }>
-                {[1,2,3,4,5,6,7,8,9,10].map((e)=><option value={e}>{e}</option>)}
-
-            </select>
-            
-        
+            <div className='header-container'>
+                <div className='header-logo'>
+                    IMDB
+                </div>
+                <Menu/>
+                <Search/>
+                <Premium/>
+                <WatchList/>
+                <SignIn/>
+                <LanguageSwitcher/>
+            </div>
         </>
     )
 }
