@@ -5,6 +5,7 @@ import Premium from './Components/Premium';
 import WatchList from './Components/WatchList';
 import SignIn from './Components/SignIn';
 import LanguageSwitcher from './Components/LanguageSwitcher';
+import Logo from './Components/Logo';
 import './Home.css';
 
 const Home = ({number, setNumber}) => {
@@ -14,9 +15,7 @@ const Home = ({number, setNumber}) => {
     return(
         <>
             <div className='header-container'>
-                <div className='header-logo'>
-                    IMDB
-                </div>
+                <Logo/>
                 <Menu/>
                 <Search/>
                 <Premium/>
