@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './Search.css';
+import Triangle from './Triangle';
 
 
 
@@ -103,14 +104,13 @@ const DropDown = () => {
         })
     }
 
+   
     return (
         <>
             <div className='search-category'>
                 <div onClick={clickMenuHandler} className='search-category-menu'>
                     {searchCategories[currentSearchCategory]}
-                    <div className='triangle'>
-                        <img src={`${process.env.PUBLIC_URL}/triangle.png`} />
-                    </div>
+                    <Triangle triangleActive={active} rotationAngle="100"/>
                 </div>
                 <div className='search-wrapper'>
                     <input onFocus={handleSearchInputOnFocus} className='input-search' type="search" />                
