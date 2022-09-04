@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./Search.css";
+import "./language.css";
 import Triangle from "./Triangle";
 
 
@@ -8,17 +8,45 @@ import Triangle from "./Triangle";
 const LanguageSwitcher = ()=>{
 
   const [active, setActive] = useState(false);
+  const [language, setLanguage] = useState('En');
+  const languagesShorts = ["En", "It", "Fr"];
+  const languages = ["English", "Italiano", "French"];
+  //const languages = [{short: "En", long: "English"}, 
+                        // {short: "It", long: "Italiano"}, 
+                        // {short: "Fr", long: "French"}];
+  //const [languagesCurrent, setLanguagesCurrent] = useState(languages[0]);
+  const [languagesCurrent, setLanguagesCurrent] = useState('English');
 
-  const clickLanguage =()=>{
+  const clickLanguage =() => {
 
     setActive(!active);
+  }
+  const renderLanguages = () => {
+
+    return languages.map((e, i)=>{
+      return(
+        <li onClick={()=>{
+          setLanguagesCurrent(e)
+        }} key={i}>{e}</li>
+
+      )
+
+    })
   }
 
     return(
         <>
-              <div onClick={clickLanguage} style={{color: active? "red" : "blue"}}>LanguageSwitcher</div>
+              <div className="language" onClick={clickLanguage} style={{color: active? "red" : "blue"}}>            
+                {languagesShorts[languages.indexOf(languagesCurrent)]}
+                <Triangle triangleActive={active} rotationAngle={180}/>
+                <div className={`closed-language-dropdown ${active?'opened-language-dropdown':''}`}>
+                    <ul className='list'>
+                      {renderLanguages()}
+                    </ul>
+                </div>
+              </div>
 
-              <Triangle triangleActive={active} rotationAngle={45}/>
+  
         
         </>
           

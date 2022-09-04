@@ -1,0 +1,55 @@
+.language{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+.closed-language-dropdown{
+    position: absolute;
+    width: 8em;
+    height: 12em;
+    background-color: black;
+    right: 0.3em;
+    top: 1.3em;
+    display: none;
+    transition: all 1s;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.list li{
+    list-style: none;
+    padding: 5px 10px 0 10px;
+    display: flex;
+    gap: 0.5em;
+}
+.list:hover{
+    cursor: pointer;
+    transition: 0.5s;
+}
+.list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.opened-language-dropdown{
+    display: flex;
+    animation: size 0.1s ease-in-out;
+    animation-iteration-count: 1;
+    width: 10em;
+    height: 14em;
+}
+
+@keyframes size {
+    from {
+      opacity: 0.5;
+      width: 8em;
+      height: 12em;
+    }
+  
+    to {
+      opacity: 1;
+      width: 10em;
+      height: 14em;
+    }
+  }

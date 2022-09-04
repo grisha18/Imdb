@@ -8,9 +8,13 @@ const Triangle = ({triangleActive, rotationAngle, opacity}) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        transition: '0.1s',
+        transformOrigin: 'center',
+        transformStyle: 'preserve-3d',
     }
     const triangleReverse = {
-        transform: 'rotate(' + (rotationAngle ?? 180) + 'deg)',
+        perspevyive: '100px',
+        transform: 'rotateZ(' + (rotationAngle ?? 180) + 'deg)',
     }
 
     const triangleImg = {

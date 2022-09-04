@@ -82,7 +82,7 @@ const DropDown = () => {
 
 
     const renderSearchResults = ()=>{
-
+        
         return searchResults.map( (elem, index)=>{
             return <div className='search-result-item'>
                     <h3>{elem.title}</h3>
@@ -92,11 +92,12 @@ const DropDown = () => {
     }
 
     const handleSearchInputOnFocus = () => {
-        console.log('we are here');
+       
         setSearchResultsShown(true);
     }
 
     const renderSearchCategories = () => {
+      console.log('we are here');
         return searchCategories.map((elem, index) => {
             return <li>
                 <div style={{ color: index === currentSearchCategory ? "red" : "green" }} onClick={() => { setCurrentSearchCategory(index) }}>{elem}</div>
@@ -125,6 +126,7 @@ const DropDown = () => {
                 <div className='search-results'>
                     { searchResultsShown ? renderSearchResults() : <></>}
                 </div>
+
             </div>
 
         </>
