@@ -1,0 +1,22 @@
+.square{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+}
+
+.crestici{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    height: 100vh;
+}
+
+.board{
+    display: flex;
+    flex-direction: row;
+    width: 330px;
+    flex-wrap: wrap;
+}

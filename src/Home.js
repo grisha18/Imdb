@@ -7,6 +7,7 @@ import SignIn from './Components/SignIn';
 import LanguageSwitcher from './Components/LanguageSwitcher';
 import Logo from './Components/Logo';
 import './Home.css';
+import Tic from './Components/TicTacToe';
 
 const Home = ({number, setNumber}) => {
  
@@ -22,6 +23,11 @@ const Home = ({number, setNumber}) => {
                 <WatchList/>
                 <SignIn/>
                 <LanguageSwitcher/>
+
+
+            </div>
+            <div className='crestici'>
+                <Tic/>
             </div>
         </>
     )
